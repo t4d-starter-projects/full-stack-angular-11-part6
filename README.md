@@ -1,3 +1,7 @@
+# Mastering Full-Stack Development with Angular 11 Series on WintellectNOW
+
+This is the starter project for the second course in the series.
+
 ## Prerequisites
 
 Install Docker for Windows or Docker for Mac - https://www.docker.com/products/docker-desktop
