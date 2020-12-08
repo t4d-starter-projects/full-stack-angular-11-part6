@@ -9,6 +9,7 @@ const routes: Routes = [
   { path: '', pathMatch: 'full', component: HomeComponent },
   { path: 'categories', component: CategoriesComponent },
   { path: 'employees', component: EmployeesComponent },
+  { path: 'login', pathMatch: 'full', redirectTo: '' },
 ];
 
 @NgModule({
