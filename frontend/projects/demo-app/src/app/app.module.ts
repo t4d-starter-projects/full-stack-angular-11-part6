@@ -26,6 +26,9 @@ import { LoginFormComponent } from './components/login-form/login-form.component
 import { CurrentUserComponent } from './components/current-user/current-user.component';
 
 import { AuthorizationInterceptorService } from './services/authorization-interceptor.service';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { ChangePasswordFormComponent } from './components/change-password-form/change-password-form.component';
+import { ProfileComponent } from './pages/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +38,10 @@ import { AuthorizationInterceptorService } from './services/authorization-interc
     EmployeesComponent,
     NavComponent,
     LoginFormComponent,
-    CurrentUserComponent
+    CurrentUserComponent,
+    UserProfileComponent,
+    ChangePasswordFormComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

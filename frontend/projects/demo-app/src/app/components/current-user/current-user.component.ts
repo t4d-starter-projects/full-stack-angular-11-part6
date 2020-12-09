@@ -27,6 +27,10 @@ export class CurrentUserComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  public navigateToProfile(): Promise<boolean> {
+    return this.router.navigateByUrl('/profile');
+  }
+
   public navigateToLogin(): Promise<boolean> {
     return this.router.navigateByUrl('/login');
   }

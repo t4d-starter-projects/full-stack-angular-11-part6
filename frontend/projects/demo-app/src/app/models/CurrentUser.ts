@@ -13,4 +13,10 @@ export class CurrentUser {
     this.roles = [];
   }
 
+  public addRole(roleName: string): CurrentUser {
+    if (!roleName) throw new Error('role name cannot be empty');
+    this.roles.push(roleName);
+    return this;
+  }
+
 }

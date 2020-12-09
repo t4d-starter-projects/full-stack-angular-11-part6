@@ -30,6 +30,7 @@ export class UsersService {
         }),
         map(userResult => {
           const currentUser = new CurrentUser(userResult.username, userResult.userKind, userResult.displayName);
+          userResult.roles.forEach(role => currentUser.addRole(role));
           return currentUser;
         }),
         tap(currentUser => {
@@ -46,6 +47,14 @@ export class UsersService {
       }),
       map(() => of(true)),
     );
+  }
+
+  public changePassword(username: string, userKind: string, oldPassword: string, newPassword: string): Observable<{}> {
+    return this.httpClient.post<{}>(
+      '/api/users/change-password',
+      {
+        username, userKind, oldPassword, newPassword,
+      });
   }
 
   public getCurrentUser(): CurrentUser | null {

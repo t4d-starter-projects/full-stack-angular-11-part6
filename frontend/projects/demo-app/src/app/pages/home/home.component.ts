@@ -11,6 +11,8 @@ import { LoginForm } from '../../models/LoginForm';
 })
 export class HomeComponent implements OnInit {
 
+  public errorMessage = '';
+
   get currentUser(): CurrentUser | null {
     return this.usersSvc.getCurrentUser();
   }
@@ -21,11 +23,23 @@ export class HomeComponent implements OnInit {
   }
 
   doLogin(loginForm: LoginForm): void {
-    this.usersSvc.loginEmployee(loginForm.username, loginForm.password).subscribe();
+    this.usersSvc.loginEmployee(loginForm.username, loginForm.password).subscribe({
+      next: () => {
+        this.errorMessage = '';
+      },
+      error: (err) => {
+        if (err.status === 404) {
+          this.errorMessage = 'Username and password not found.';
+        } else {
+          this.errorMessage = 'Unknown login error.';
+        }
+      }
+    });
   }
 
   doClear(): void {
     console.log('clicked clear');
+    this.errorMessage = '';
   }
 
 }

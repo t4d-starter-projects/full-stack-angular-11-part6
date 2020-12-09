@@ -24,6 +24,10 @@
       Login
     </mat-card-title>
     <mat-card-content>
+      <p *ngIf="!!errorMessage" class="mat-error error">
+        <mat-icon aria-hidden="false" aria-label="Error">error</mat-icon>
+        {{errorMessage}}
+      </p>
       <app-login-form (login)="doLogin($event)" (clear)="doClear()"></app-login-form>
     </mat-card-content>
   </mat-card>
