@@ -1,6 +1,6 @@
 # Mastering Full-Stack Development with Angular 11 Series on WintellectNOW
 
-This is the starter project for the fifth course in the series.
+This is the starter project for the sixth course in the series.
 
 ## Prerequisites
 
