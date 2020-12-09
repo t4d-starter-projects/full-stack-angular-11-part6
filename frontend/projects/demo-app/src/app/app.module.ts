@@ -14,6 +14,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatTableModule } from '@angular/material/table';
+import { MatSnackBarModule, MAT_SNACK_BAR_DEFAULT_OPTIONS } from '@angular/material/snack-bar'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -29,6 +30,7 @@ import { AuthorizationInterceptorService } from './services/authorization-interc
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { ChangePasswordFormComponent } from './components/change-password-form/change-password-form.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { LogoutComponent } from './pages/logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,8 @@ import { ProfileComponent } from './pages/profile/profile.component';
     CurrentUserComponent,
     UserProfileComponent,
     ChangePasswordFormComponent,
-    ProfileComponent
+    ProfileComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
@@ -60,9 +63,11 @@ import { ProfileComponent } from './pages/profile/profile.component';
     MatInputModule,
     MatMenuModule,
     MatTableModule,
+    MatSnackBarModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthorizationInterceptorService, multi: true },
+    { provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: { duration: 2500 } },
   ],
   bootstrap: [AppComponent]
 })

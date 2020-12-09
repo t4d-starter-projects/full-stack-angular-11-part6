@@ -68,4 +68,10 @@ export class UsersService {
   public getRefreshToken(): string | null {
     return localStorage.refreshToken;
   }
+
+  public logoutUser(): void {
+    this.accessToken = null;
+    this.currentUser = null;
+    localStorage.refreshToken = null;
+  }
 }

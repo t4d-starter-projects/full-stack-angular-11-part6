@@ -1,3 +1,4 @@
+import { intersection } from 'lodash-es';
 
 export class CurrentUser {
 
@@ -17,6 +18,10 @@ export class CurrentUser {
     if (!roleName) throw new Error('role name cannot be empty');
     this.roles.push(roleName);
     return this;
+  }
+
+  public hasRole(roleNames: string[]): boolean {
+    return intersection(this.roles, roleNames).length > 0;
   }
 
 }

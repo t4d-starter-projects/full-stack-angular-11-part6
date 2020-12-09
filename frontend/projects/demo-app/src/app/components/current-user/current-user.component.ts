@@ -31,6 +31,10 @@ export class CurrentUserComponent implements OnInit {
     return this.router.navigateByUrl('/profile');
   }
 
+  public navigateToLogout(): Promise<boolean> {
+    return this.router.navigateByUrl('/logout');
+  }
+
   public navigateToLogin(): Promise<boolean> {
     return this.router.navigateByUrl('/login');
   }
